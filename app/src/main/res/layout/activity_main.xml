@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="@string/show"/>
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/submit"
+        android:hint="username"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_repository"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/username"
+        app:layoutManager="LinearLayoutManager"/>
+
+
+    <FrameLayout
+        android:id="@+id/list_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/username"
+        android:visibility="gone"/>
+
+</RelativeLayout>
