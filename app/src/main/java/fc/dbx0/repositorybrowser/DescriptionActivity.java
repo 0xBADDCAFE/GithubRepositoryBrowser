@@ -4,12 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 
 public class DescriptionActivity extends AppCompatActivity {
     public static final String ARG_REPO_NAME = "repo-name";
-    public static final String ARG_REPO_DESCRIPTON = "repo-description";
+    public static final String ARG_REPO_DESCRIPTION = "repo-description";
     public static final String ARG_REPO_STAR = "repo-star";
     public static final String ARG_REPO_FORK = "repo-fork";
 
@@ -21,7 +20,7 @@ public class DescriptionActivity extends AppCompatActivity {
         Intent i = getIntent();
 
         String name = i.getStringExtra(ARG_REPO_NAME);
-        String description = i.getStringExtra(ARG_REPO_DESCRIPTON);
+        String description = i.getStringExtra(ARG_REPO_DESCRIPTION);
         String star = i.getStringExtra(ARG_REPO_STAR);
         String fork = i.getStringExtra(ARG_REPO_FORK);
 

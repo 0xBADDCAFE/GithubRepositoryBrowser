@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import fc.dbx0.repositorybrowser.api.GithubService;
 import fc.dbx0.repositorybrowser.api.entity.Repo;
-import fc.dbx0.repositorybrowser.dummy.DummyContent;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -14,7 +13,6 @@ import retrofit2.converter.moshi.MoshiConverterFactory;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,13 +20,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
-import static fc.dbx0.repositorybrowser.DescriptionActivity.ARG_REPO_DESCRIPTON;
+import static fc.dbx0.repositorybrowser.DescriptionActivity.ARG_REPO_DESCRIPTION;
 import static fc.dbx0.repositorybrowser.DescriptionActivity.ARG_REPO_FORK;
 import static fc.dbx0.repositorybrowser.DescriptionActivity.ARG_REPO_NAME;
 import static fc.dbx0.repositorybrowser.DescriptionActivity.ARG_REPO_STAR;
@@ -87,11 +82,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onRepoListItemClick(Repo repo) {
-        // TODO: Description show screen
         Intent i = new Intent(this, DescriptionActivity.class);
 
         i.putExtra(ARG_REPO_NAME, repo.name);
-        i.putExtra(ARG_REPO_DESCRIPTON, repo.description);
+        i.putExtra(ARG_REPO_DESCRIPTION, repo.description);
         i.putExtra(ARG_REPO_STAR, repo.stargazers_count);
         i.putExtra(ARG_REPO_FORK, repo.forks_count);
 
